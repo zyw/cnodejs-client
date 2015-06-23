@@ -8,6 +8,10 @@
 
 import UIKit
 import Alamofire
+import PKHUD
+import MONActivityIndicatorView
+import MJRefresh
+import RESideMenu
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MONActivityIndicatorViewDelegate, HttpProtocol,ViewLeftMenuDelegate {
     
@@ -36,6 +40,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         httpReq.delegate = self
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        PKHUD.sharedHUD.dimsBackground = false
+        PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
         
         //在iOS8中设置TableViewCell的高度自适应
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -85,6 +92,28 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.indicatorView.startAnimating()
     }
     
+    //添加点击重试按钮
+    func addRetryButton(){
+        //使用代码创建一个按钮，感觉这么别扭
+        let retryBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        retryBtn.setTitle("点击重试", forState: UIControlState.Normal)
+        
+        self.view.addSubview(retryBtn)
+        
+        let centerY = NSLayoutConstraint(item: retryBtn, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
+        
+        let centerX = NSLayoutConstraint(item: retryBtn, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        retryBtn.setTranslatesAutoresizingMaskIntoConstraints(false)
+        centerX.active = true
+        centerY.active = true
+        retryBtn.addTarget(self, action: "retryHeader:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    func retryHeader(sender:UIButton){
+        sender.removeFromSuperview()
+        //self.view.remove
+        setLoadingView()
+        httpReq.onHttpRequest("https://cnodejs.org/api/v1/topics?tab=\(TopicsInfo.tag)&page=\(TopicsInfo.page)")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -112,6 +141,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         endRefreshing()
         
         self.tableView.reloadData()
+    }
+    
+    func didRecieveFailed(error:NSError?){
+        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "网络不给力")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        if TopicsInfo.isMore {
+            TopicsInfo.isMore = false
+        } else {
+            removeIndicatorView()
+            addRetryButton()
+        }
+        endRefreshing()
     }
     
     private func endRefreshing(){
@@ -204,9 +246,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         TopicsInfo.selectedRowIndex = indexPath.row
         self.topic = TopicsInfo.topicLists[indexPath.row]
-//        self.topicId = TopicsInfo.topicLists[indexPath.row]["id"].string
-//        self.topicContent = TopicsInfo.topicLists[indexPath.row]["content"].string
-//        self.topicTitle = TopicsInfo.topicLists[indexPath.row]["title"].string
         
         return indexPath
     }
@@ -221,9 +260,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if segue.identifier! == "cellSegue"{
             let tvc = segue.destinationViewController as! ViewTopicController
             tvc.topic = self.topic
-//            tvc.topicId = self.topicId
-//            tvc.topicTitle = self.topicTitle
-//            tvc.topicContent = self.topicContent
         }
     }
     

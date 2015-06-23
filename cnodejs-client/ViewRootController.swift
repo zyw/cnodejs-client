@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RESideMenu
 
 class ViewRootController: RESideMenu,RESideMenuDelegate {
     override func awakeFromNib() {

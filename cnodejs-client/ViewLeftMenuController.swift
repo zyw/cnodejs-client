@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RESideMenu
 
 class ViewLeftMenuController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     

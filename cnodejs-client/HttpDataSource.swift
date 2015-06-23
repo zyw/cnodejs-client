@@ -16,8 +16,7 @@ class HttpDataSource{
             if let res: AnyObject = result{
                 self.delegate?.didRecieveResults(res)
             }else{
-                let alert = UIAlertView(title: "温馨提示", message: "网络交互失败！", delegate: nil, cancelButtonTitle: "取消")
-                alert.show()
+                self.delegate?.didRecieveFailed(error)
             }
         }
     }
@@ -26,4 +25,5 @@ class HttpDataSource{
 
 protocol HttpProtocol{
     func didRecieveResults(result:AnyObject)
+    func didRecieveFailed(error:NSError?)
 }

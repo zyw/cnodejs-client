@@ -1,16 +1,19 @@
 PODS:
   - MJRefresh (1.4.7)
   - MONActivityIndicatorView (0.0.3)
+  - PKHUD (2.0.1)
   - RESideMenu (4.0.7)
 
 DEPENDENCIES:
   - MJRefresh
   - MONActivityIndicatorView
+  - PKHUD (~> 2.0.1)
   - RESideMenu (~> 4.0.7)
 
 SPEC CHECKSUMS:
   MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
   MONActivityIndicatorView: a00611695de16d956b17d03be25ee49a8effc5f2
+  PKHUD: a35d89fd82d0aeb67f53de086b3029aea3423b74
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
 
 COCOAPODS: 0.37.2
