@@ -60,6 +60,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func setRefresh(){
         self.tableView.addLegendHeaderWithRefreshingBlock { () -> Void in
             self.httpReq.onHttpRequest("https://cnodejs.org/api/v1/topics?tab=\(TopicsInfo.tag)")
+            TopicsInfo.requestType = 1
         }
         
         //隐藏更新时间
@@ -68,7 +69,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.addLegendFooterWithRefreshingBlock { () -> Void in
             self.httpReq.onHttpRequest("https://cnodejs.org/api/v1/topics?tab=\(TopicsInfo.tag)&page=\(TopicsInfo.page)")
             TopicsInfo.page++
-            TopicsInfo.isMore = true
+            TopicsInfo.requestType = 2
         }
     }
     
@@ -129,9 +130,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func didRecieveResults(result:AnyObject){
         let json = JSON(result)
-        if TopicsInfo.isMore {
+        if TopicsInfo.requestType == 2 {
             TopicsInfo.topicLists += json["data"].arrayValue
-            TopicsInfo.isMore = false
+            TopicsInfo.requestType = 0
         }else{
             TopicsInfo.topicLists = json["data"].arrayValue
         }
@@ -147,8 +148,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: "网络不给力")
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
-        if TopicsInfo.isMore {
-            TopicsInfo.isMore = false
+        if TopicsInfo.requestType == 1 || TopicsInfo.requestType == 2 {
+            TopicsInfo.requestType = 0
         } else {
             removeIndicatorView()
             addRetryButton()

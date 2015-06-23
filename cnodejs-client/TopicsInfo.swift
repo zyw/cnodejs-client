@@ -12,7 +12,7 @@ struct TopicsInfo {
     static var topicLists:[JSON] = []
     static var tag:String = "all"
     static var page:Int = 1
-    static var isMore = false
+    static var requestType = 0    //网络请求的类型，0首次加载，1上拉，2下拉
     
     static var selectedRowIndex:Int?
 }
