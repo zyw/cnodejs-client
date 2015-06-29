@@ -184,7 +184,11 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="活动详情" id="bBE-yo-Bu3"/>
+                    <navigationItem key="navigationItem" title="活动详情" id="bBE-yo-Bu3">
+                        <barButtonItem key="rightBarButtonItem" image="iconfont-fenxiang2" id="qO8-yc-V94">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -333,6 +337,7 @@
         <image name="icon_visit" width="36" height="24"/>
         <image name="iconfont-dianzan" width="32" height="32"/>
         <image name="iconfont-favor" width="32" height="32"/>
+        <image name="iconfont-fenxiang2" width="32" height="32"/>
         <image name="iconfont-pinglun" width="32" height="32"/>
         <image name="list4" width="26" height="19"/>
     </resources>
