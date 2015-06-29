@@ -162,24 +162,51 @@
                                     <outletCollection property="gestureRecognizers" destination="qrT-N4-AWM" appends="YES" id="oRJ-R2-FIh"/>
                                 </connections>
                             </webView>
-                            <tabBar contentMode="scaleToFill" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="fTV-Zh-voe">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="收藏" image="iconfont-favor" selectedImage="iconfont-favor" id="FlO-JF-hZP"/>
-                                    <tabBarItem title="评语" image="iconfont-pinglun" selectedImage="iconfont-pinglun" id="1Ds-5y-z6Z"/>
-                                    <tabBarItem title="点赞" image="iconfont-dianzan" selectedImage="iconfont-dianzan" id="d05-29-Yhm"/>
-                                </items>
-                            </tabBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="footer-bg" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-VP-ml8">
+                                <rect key="frame" x="-2" y="623" width="380" height="46"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-At-8k0">
+                                <rect key="frame" x="7" y="629" width="87" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="收藏" image="iconfont-favor">
+                                    <color key="titleColor" red="0.51515151515151514" green="0.51515151515151514" blue="0.51515151515151514" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIP-jX-LLk">
+                                <rect key="frame" x="158" y="629" width="87" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="点赞" image="iconfont-dianzan">
+                                    <color key="titleColor" red="0.51515151520000002" green="0.51515151520000002" blue="0.51515151520000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-xq-aya">
+                                <rect key="frame" x="288" y="629" width="87" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="评论" image="iconfont-pinglun2">
+                                    <color key="titleColor" red="0.47127525250000002" green="0.47127525250000002" blue="0.47127525250000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="|" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jF-fO-djN">
+                                <rect key="frame" x="123" y="635" width="2" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.47127525250000002" green="0.47127525250000002" blue="0.47127525250000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="|" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QT6-RN-Hok">
+                                <rect key="frame" x="262" y="635" width="2" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.47127525250000002" green="0.47127525250000002" blue="0.47127525250000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="fTV-Zh-voe" secondAttribute="bottom" id="BdN-0X-lPT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fTV-Zh-voe" secondAttribute="trailing" constant="-16" id="Cwa-t6-Tm0"/>
                             <constraint firstItem="Fy3-PS-HF3" firstAttribute="top" secondItem="hi2-6x-tnk" secondAttribute="bottom" id="DIA-bf-xO1"/>
                             <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="Fy3-PS-HF3" secondAttribute="bottom" constant="49" id="WYz-WD-4YN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fy3-PS-HF3" secondAttribute="trailing" constant="-16" id="c20-wk-gKA"/>
-                            <constraint firstItem="fTV-Zh-voe" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="ikG-Ko-KB7"/>
                             <constraint firstItem="Fy3-PS-HF3" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="xv5-54-1CC"/>
                         </constraints>
                     </view>
@@ -192,7 +219,6 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="tabBar" destination="fTV-Zh-voe" id="DEE-F4-e2Z"/>
                         <outlet property="webView" destination="Fy3-PS-HF3" id="YsC-gR-OxA"/>
                     </connections>
                 </viewController>
@@ -333,12 +359,13 @@
     </scenes>
     <resources>
         <image name="cnodejs-logo" width="683" height="160"/>
+        <image name="footer-bg" width="1" height="46"/>
         <image name="icon_reply_small" width="30" height="26"/>
         <image name="icon_visit" width="36" height="24"/>
-        <image name="iconfont-dianzan" width="32" height="32"/>
-        <image name="iconfont-favor" width="32" height="32"/>
-        <image name="iconfont-fenxiang2" width="32" height="32"/>
-        <image name="iconfont-pinglun" width="32" height="32"/>
+        <image name="iconfont-dianzan" width="21" height="21"/>
+        <image name="iconfont-favor" width="21" height="21"/>
+        <image name="iconfont-fenxiang2" width="21" height="21"/>
+        <image name="iconfont-pinglun2" width="21" height="21"/>
         <image name="list4" width="26" height="19"/>
     </resources>
 </document>
