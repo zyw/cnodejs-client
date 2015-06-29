@@ -35,11 +35,9 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITabBarDelegate/*
         //设置tab的选中后的图片
         let tabBarItems = tabBar.items
         
-        (tabBarItems?[0] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-back2")
-        (tabBarItems?[1] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-more")
-        (tabBarItems?[2] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-pinglun2")
-        (tabBarItems?[3] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-fenxiang2")
-        (tabBarItems?[4] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-dianzan")
+        (tabBarItems?[0] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-favor")
+        (tabBarItems?[1] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-pinglun2")
+        (tabBarItems?[2] as! UITabBarItem).selectedImage = UIImage(named: "iconfont-dianzan")
         
         //设置返回按钮的图标
         var bItem = UIBarButtonItem(image: UIImage(named: "iconfont-back"), style: UIBarButtonItemStyle.Plain, target: self, action: "backHeader")
@@ -102,6 +100,7 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITabBarDelegate/*
     */
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!){
+        /*
         switch item.title! {
             case "前进":
                 let rowIndex = TopicsInfo.selectedRowIndex!
@@ -124,6 +123,7 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITabBarDelegate/*
             default:
                 println()
         }
+        */
     }
 
 }

@@ -166,10 +166,8 @@
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="后退" image="iconfont-back2" selectedImage="iconfont-back2" id="FlO-JF-hZP"/>
-                                    <tabBarItem title="前进" image="iconfont-more" selectedImage="iconfont-more" id="Cz7-Bu-TjI"/>
+                                    <tabBarItem title="收藏" image="iconfont-favor" selectedImage="iconfont-favor" id="FlO-JF-hZP"/>
                                     <tabBarItem title="评语" image="iconfont-pinglun" selectedImage="iconfont-pinglun" id="1Ds-5y-z6Z"/>
-                                    <tabBarItem title="分享" image="iconfont-fenxiang" selectedImage="iconfont-fenxiang" id="Hm8-UN-hRu"/>
                                     <tabBarItem title="点赞" image="iconfont-dianzan" selectedImage="iconfont-dianzan" id="d05-29-Yhm"/>
                                 </items>
                             </tabBar>
@@ -333,10 +331,8 @@
         <image name="cnodejs-logo" width="683" height="160"/>
         <image name="icon_reply_small" width="30" height="26"/>
         <image name="icon_visit" width="36" height="24"/>
-        <image name="iconfont-back2" width="32" height="32"/>
         <image name="iconfont-dianzan" width="32" height="32"/>
-        <image name="iconfont-fenxiang" width="32" height="32"/>
-        <image name="iconfont-more" width="32" height="32"/>
+        <image name="iconfont-favor" width="32" height="32"/>
         <image name="iconfont-pinglun" width="32" height="32"/>
         <image name="list4" width="26" height="19"/>
     </resources>
