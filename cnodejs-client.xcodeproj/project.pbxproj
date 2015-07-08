@@ -289,6 +289,7 @@
 				TargetAttributes = {
 					42060E691B19F42900B11449 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 34H4ZLRH7R;
 					};
 					42060E7E1B19F42900B11449 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -567,9 +568,12 @@
 			baseConfigurationReference = 1641FFE8FC81517BBF49A4A5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "cnodejs-client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "cnodejs-Swift.h";
 				SWIFT_WHOLE_MODULE_OPTIMIZATION = NO;
@@ -581,9 +585,12 @@
 			baseConfigurationReference = 6624EA7C54471AB7F01F0E59 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "cnodejs-client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "cnodejs-Swift.h";
 				SWIFT_WHOLE_MODULE_OPTIMIZATION = NO;
