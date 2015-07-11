@@ -18,6 +18,7 @@ class ViewTopicController: UIViewController,UIWebViewDelegate/*, HttpProtocol*/ 
     
     @IBOutlet weak var webView: UIWebView!
  
+    @IBOutlet weak var enshrine: UIButton!
     //let httpReq = HttpDataSource()
     
     

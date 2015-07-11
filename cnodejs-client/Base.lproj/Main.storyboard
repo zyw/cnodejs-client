@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uHS-qo-fma">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uHS-qo-fma">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -155,58 +155,94 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-PS-HF3">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="569"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="qrT-N4-AWM" appends="YES" id="oRJ-R2-FIh"/>
                                 </connections>
                             </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="footer-bg" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-VP-ml8">
-                                <rect key="frame" x="-2" y="623" width="380" height="46"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer-bg" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-VP-ml8">
+                                <rect key="frame" x="0.0" y="632" width="380" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="pVu-bS-BPl"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-At-8k0">
-                                <rect key="frame" x="7" y="629" width="87" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="246" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-At-8k0">
+                                <rect key="frame" x="0.0" y="632" width="120" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2lD-TZ-RBN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="收藏" image="iconfont-favor">
-                                    <color key="titleColor" red="0.51515151515151514" green="0.51515151515151514" blue="0.51515151515151514" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="enshrine">
+                                    <color key="titleColor" red="0.84037642045454541" green="0.84037642045454541" blue="0.84037642045454541" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.90078519570707072" green="0.90078519570707072" blue="0.90078519570707072" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="enshrine" backgroundImage="nav-bg"/>
+                                <state key="highlighted" image="enshrine" backgroundImage="nav-bg"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIP-jX-LLk">
-                                <rect key="frame" x="158" y="629" width="87" height="32"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="247" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="DzS-En-EeZ">
+                                <rect key="frame" x="120" y="633" width="7" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="7" id="aW8-Ek-XWk"/>
+                                    <constraint firstAttribute="height" constant="33" id="iTC-VW-mrx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIP-jX-LLk">
+                                <rect key="frame" x="127" y="633" width="120" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ctN-kT-A2h"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="点赞" image="iconfont-dianzan">
-                                    <color key="titleColor" red="0.51515151520000002" green="0.51515151520000002" blue="0.51515151520000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="laud">
+                                    <color key="titleColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.85608033459595956" green="0.85608033459595956" blue="0.85608033459595956" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="laud" backgroundImage="nav-bg"/>
+                                <state key="highlighted" image="laud" backgroundImage="nav-bg"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-xq-aya">
-                                <rect key="frame" x="288" y="629" width="87" height="32"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="fPJ-GE-1cu">
+                                <rect key="frame" x="247" y="633" width="7" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="7BD-9u-73F"/>
+                                    <constraint firstAttribute="width" constant="7" id="hmg-4H-VPb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-xq-aya">
+                                <rect key="frame" x="254" y="633" width="120" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="sgl-WI-bbP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="评论" image="iconfont-pinglun2">
-                                    <color key="titleColor" red="0.47127525250000002" green="0.47127525250000002" blue="0.47127525250000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="comment">
+                                    <color key="titleColor" red="0.88174715909090906" green="0.88174715909090906" blue="0.88174715909090906" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.86154513888888884" green="0.86154513888888884" blue="0.86154513888888884" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="comment" backgroundImage="nav-bg"/>
+                                <state key="highlighted" image="comment" backgroundImage="nav-bg"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="|" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jF-fO-djN">
-                                <rect key="frame" x="123" y="635" width="2" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.47127525250000002" green="0.47127525250000002" blue="0.47127525250000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="|" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QT6-RN-Hok">
-                                <rect key="frame" x="262" y="635" width="2" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.47127525250000002" green="0.47127525250000002" blue="0.47127525250000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="e9P-VP-ml8" secondAttribute="bottom" id="6Mn-7I-xd5"/>
                             <constraint firstItem="Fy3-PS-HF3" firstAttribute="top" secondItem="hi2-6x-tnk" secondAttribute="bottom" id="DIA-bf-xO1"/>
-                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="Fy3-PS-HF3" secondAttribute="bottom" constant="49" id="WYz-WD-4YN"/>
+                            <constraint firstItem="fPJ-GE-1cu" firstAttribute="leading" secondItem="gIP-jX-LLk" secondAttribute="trailing" id="Fr1-QJ-kLN"/>
+                            <constraint firstItem="e9P-VP-ml8" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="H3e-LD-CNa"/>
+                            <constraint firstItem="peq-xq-aya" firstAttribute="leading" secondItem="fPJ-GE-1cu" secondAttribute="trailing" id="Jg0-sO-995"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="DzS-En-EeZ" secondAttribute="bottom" constant="1" id="NHY-6Y-dLO"/>
+                            <constraint firstItem="DzS-En-EeZ" firstAttribute="leading" secondItem="d3c-At-8k0" secondAttribute="trailing" id="S2P-pR-aSa"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="Fy3-PS-HF3" secondAttribute="bottom" constant="34" id="WYz-WD-4YN"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="peq-xq-aya" secondAttribute="bottom" constant="-1" id="bUP-MI-pfx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fy3-PS-HF3" secondAttribute="trailing" constant="-16" id="c20-wk-gKA"/>
+                            <constraint firstItem="gIP-jX-LLk" firstAttribute="leading" secondItem="DzS-En-EeZ" secondAttribute="trailing" id="cDP-QN-VTl"/>
+                            <constraint firstItem="d3c-At-8k0" firstAttribute="width" secondItem="gIP-jX-LLk" secondAttribute="width" id="dat-NS-WVY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e9P-VP-ml8" secondAttribute="trailing" constant="-21" id="ffF-qQ-jTM"/>
+                            <constraint firstItem="d3c-At-8k0" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="hpz-cb-1cS"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="d3c-At-8k0" secondAttribute="bottom" id="iPM-h9-608"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="gIP-jX-LLk" secondAttribute="bottom" constant="-1" id="jWT-zE-Il9"/>
+                            <constraint firstItem="d3c-At-8k0" firstAttribute="width" secondItem="peq-xq-aya" secondAttribute="width" id="kJb-1a-xxr"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="fPJ-GE-1cu" secondAttribute="bottom" constant="1" id="m3E-JI-zvj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="peq-xq-aya" secondAttribute="trailing" constant="-15" id="qRT-f2-9Us"/>
                             <constraint firstItem="Fy3-PS-HF3" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="xv5-54-1CC"/>
                         </constraints>
                     </view>
@@ -219,6 +255,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="enshrine" destination="d3c-At-8k0" id="5QY-3C-W0c"/>
                         <outlet property="webView" destination="Fy3-PS-HF3" id="YsC-gR-OxA"/>
                     </connections>
                 </viewController>
@@ -359,13 +396,15 @@
     </scenes>
     <resources>
         <image name="cnodejs-logo" width="683" height="160"/>
+        <image name="comment" width="61" height="18"/>
+        <image name="enshrine" width="63" height="23"/>
         <image name="footer-bg" width="1" height="46"/>
         <image name="icon_reply_small" width="30" height="26"/>
         <image name="icon_visit" width="36" height="24"/>
-        <image name="iconfont-dianzan" width="21" height="21"/>
-        <image name="iconfont-favor" width="21" height="21"/>
         <image name="iconfont-fenxiang2" width="21" height="21"/>
-        <image name="iconfont-pinglun2" width="21" height="21"/>
+        <image name="laud" width="60" height="20"/>
+        <image name="line" width="1" height="31"/>
         <image name="list4" width="26" height="19"/>
+        <image name="nav-bg" width="200" height="70"/>
     </resources>
 </document>
