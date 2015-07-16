@@ -154,14 +154,21 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-PS-HF3">
-                                <rect key="frame" x="0.0" y="64" width="375" height="569"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="qrT-N4-AWM" appends="YES" id="oRJ-R2-FIh"/>
-                                </connections>
-                            </webView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-cD-2zW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="570"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-PS-HF3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                    </webView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Fy3-PS-HF3" secondAttribute="trailing" id="86U-Qy-c2t"/>
+                                    <constraint firstItem="Fy3-PS-HF3" firstAttribute="top" secondItem="ehu-cD-2zW" secondAttribute="top" id="hPD-vx-fF4"/>
+                                    <constraint firstItem="Fy3-PS-HF3" firstAttribute="leading" secondItem="ehu-cD-2zW" secondAttribute="leading" id="vA9-Qq-xjU"/>
+                                </constraints>
+                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer-bg" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-VP-ml8">
                                 <rect key="frame" x="0.0" y="632" width="380" height="35"/>
                                 <constraints>
@@ -225,15 +232,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="e9P-VP-ml8" secondAttribute="bottom" id="6Mn-7I-xd5"/>
-                            <constraint firstItem="Fy3-PS-HF3" firstAttribute="top" secondItem="hi2-6x-tnk" secondAttribute="bottom" id="DIA-bf-xO1"/>
+                            <constraint firstItem="ehu-cD-2zW" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="9tG-mT-jBv"/>
                             <constraint firstItem="fPJ-GE-1cu" firstAttribute="leading" secondItem="gIP-jX-LLk" secondAttribute="trailing" id="Fr1-QJ-kLN"/>
                             <constraint firstItem="e9P-VP-ml8" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="H3e-LD-CNa"/>
                             <constraint firstItem="peq-xq-aya" firstAttribute="leading" secondItem="fPJ-GE-1cu" secondAttribute="trailing" id="Jg0-sO-995"/>
                             <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="DzS-En-EeZ" secondAttribute="bottom" constant="1" id="NHY-6Y-dLO"/>
                             <constraint firstItem="DzS-En-EeZ" firstAttribute="leading" secondItem="d3c-At-8k0" secondAttribute="trailing" id="S2P-pR-aSa"/>
-                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="Fy3-PS-HF3" secondAttribute="bottom" constant="34" id="WYz-WD-4YN"/>
+                            <constraint firstItem="ehu-cD-2zW" firstAttribute="top" secondItem="hi2-6x-tnk" secondAttribute="bottom" id="YIB-eM-W5C"/>
                             <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="peq-xq-aya" secondAttribute="bottom" constant="-1" id="bUP-MI-pfx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Fy3-PS-HF3" secondAttribute="trailing" constant="-16" id="c20-wk-gKA"/>
                             <constraint firstItem="gIP-jX-LLk" firstAttribute="leading" secondItem="DzS-En-EeZ" secondAttribute="trailing" id="cDP-QN-VTl"/>
                             <constraint firstItem="d3c-At-8k0" firstAttribute="width" secondItem="gIP-jX-LLk" secondAttribute="width" id="dat-NS-WVY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e9P-VP-ml8" secondAttribute="trailing" constant="-21" id="ffF-qQ-jTM"/>
@@ -243,7 +249,7 @@
                             <constraint firstItem="d3c-At-8k0" firstAttribute="width" secondItem="peq-xq-aya" secondAttribute="width" id="kJb-1a-xxr"/>
                             <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="fPJ-GE-1cu" secondAttribute="bottom" constant="1" id="m3E-JI-zvj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="peq-xq-aya" secondAttribute="trailing" constant="-15" id="qRT-f2-9Us"/>
-                            <constraint firstItem="Fy3-PS-HF3" firstAttribute="leading" secondItem="Ill-G5-CKt" secondAttribute="leadingMargin" constant="-16" id="xv5-54-1CC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ehu-cD-2zW" secondAttribute="trailing" constant="-16" id="xXS-0e-DfA"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -256,15 +262,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="enshrine" destination="d3c-At-8k0" id="5QY-3C-W0c"/>
+                        <outlet property="scrollView" destination="ehu-cD-2zW" id="gmA-BE-9aW"/>
                         <outlet property="webView" destination="Fy3-PS-HF3" id="YsC-gR-OxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtH-GQ-DBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="qrT-N4-AWM">
-                    <connections>
-                        <action selector="backIndexList:" destination="oOQ-eX-fGr" id="L4L-e8-ZoG"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1085.5" y="436.5"/>
         </scene>
