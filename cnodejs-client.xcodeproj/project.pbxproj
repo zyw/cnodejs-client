@@ -20,6 +20,7 @@
 		424FA12B1B384C5A000908AD /* TopicsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424FA12A1B384C5A000908AD /* TopicsInfo.swift */; };
 		4263036E1B2DCA7100D1F0C2 /* RoundUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4263036D1B2DCA7100D1F0C2 /* RoundUIImageView.swift */; };
 		42A7CC7D1B1C35DD003015A4 /* KitTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7CC7C1B1C35DD003015A4 /* KitTool.swift */; };
+		42BD397D1B58088100B62632 /* Comment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42BD397C1B58088100B62632 /* Comment.xib */; };
 		42FAA77E1B1DDD13003E9934 /* ViewTopicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAA77D1B1DDD13003E9934 /* ViewTopicController.swift */; };
 		42FEA70B1B4EC73D0051FFA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FEA70A1B4EC73D0051FFA1 /* Images.xcassets */; };
 		42FECD1E1B20893400468C25 /* ViewRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FECD1D1B20893400468C25 /* ViewRootController.swift */; };
@@ -102,6 +103,7 @@
 		424FA12A1B384C5A000908AD /* TopicsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsInfo.swift; sourceTree = "<group>"; };
 		4263036D1B2DCA7100D1F0C2 /* RoundUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIImageView.swift; sourceTree = "<group>"; };
 		42A7CC7C1B1C35DD003015A4 /* KitTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitTool.swift; sourceTree = "<group>"; };
+		42BD397C1B58088100B62632 /* Comment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Comment.xib; sourceTree = "<group>"; };
 		42FAA77D1B1DDD13003E9934 /* ViewTopicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTopicController.swift; sourceTree = "<group>"; };
 		42FEA70A1B4EC73D0051FFA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42FECD1D1B20893400468C25 /* ViewRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRootController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				42FEA70A1B4EC73D0051FFA1 /* Images.xcassets */,
 				42060E731B19F42900B11449 /* Main.storyboard */,
 				42060E781B19F42900B11449 /* LaunchScreen.xib */,
+				42BD397C1B58088100B62632 /* Comment.xib */,
 				42FECD211B208B0C00468C25 /* utils */,
 				42060E6D1B19F42900B11449 /* Supporting Files */,
 			);
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FEA70B1B4EC73D0051FFA1 /* Images.xcassets in Resources */,
+				42BD397D1B58088100B62632 /* Comment.xib in Resources */,
 				42060E751B19F42900B11449 /* Main.storyboard in Resources */,
 				42060E7A1B19F42900B11449 /* LaunchScreen.xib in Resources */,
 			);
