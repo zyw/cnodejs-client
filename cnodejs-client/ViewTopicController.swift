@@ -126,7 +126,6 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "comment-cell")
         let replie = replies[indexPath.row]
-        println(replie["content"].string)
         cell.textLabel?.text = replie["content"].string
         return cell
     }
