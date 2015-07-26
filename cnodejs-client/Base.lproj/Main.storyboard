@@ -154,20 +154,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-cD-2zW">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-cD-2zW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="570"/>
-                                <subviews>
-                                    <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-PS-HF3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <gestureRecognizers/>
-                                    </webView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Fy3-PS-HF3" secondAttribute="trailing" id="86U-Qy-c2t"/>
-                                    <constraint firstItem="Fy3-PS-HF3" firstAttribute="top" secondItem="ehu-cD-2zW" secondAttribute="top" id="hPD-vx-fF4"/>
-                                    <constraint firstItem="Fy3-PS-HF3" firstAttribute="leading" secondItem="ehu-cD-2zW" secondAttribute="leading" id="vA9-Qq-xjU"/>
-                                </constraints>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer-bg" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-VP-ml8">
                                 <rect key="frame" x="0.0" y="632" width="380" height="35"/>
@@ -240,6 +228,7 @@
                             <constraint firstItem="DzS-En-EeZ" firstAttribute="leading" secondItem="d3c-At-8k0" secondAttribute="trailing" id="S2P-pR-aSa"/>
                             <constraint firstItem="ehu-cD-2zW" firstAttribute="top" secondItem="hi2-6x-tnk" secondAttribute="bottom" id="YIB-eM-W5C"/>
                             <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="peq-xq-aya" secondAttribute="bottom" constant="-1" id="bUP-MI-pfx"/>
+                            <constraint firstItem="McX-1P-Xzm" firstAttribute="top" secondItem="ehu-cD-2zW" secondAttribute="bottom" constant="33" id="bh7-c0-Pxr"/>
                             <constraint firstItem="gIP-jX-LLk" firstAttribute="leading" secondItem="DzS-En-EeZ" secondAttribute="trailing" id="cDP-QN-VTl"/>
                             <constraint firstItem="d3c-At-8k0" firstAttribute="width" secondItem="gIP-jX-LLk" secondAttribute="width" id="dat-NS-WVY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e9P-VP-ml8" secondAttribute="trailing" constant="-21" id="ffF-qQ-jTM"/>
@@ -263,7 +252,6 @@
                     <connections>
                         <outlet property="enshrine" destination="d3c-At-8k0" id="5QY-3C-W0c"/>
                         <outlet property="scrollView" destination="ehu-cD-2zW" id="gmA-BE-9aW"/>
-                        <outlet property="webView" destination="Fy3-PS-HF3" id="YsC-gR-OxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtH-GQ-DBG" userLabel="First Responder" sceneMemberID="firstResponder"/>

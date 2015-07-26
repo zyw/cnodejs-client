@@ -9,22 +9,19 @@
 import UIKit
 //import Alamofire
 
-class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSource/*, HttpProtocol*/ {
+class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSource, HttpProtocol {
     
     var topic:JSON?
-//    var topicId:String?
-//    var topicTitle:String?
-//    var topicContent:String?
     
-    @IBOutlet weak var webView: UIWebView!
+    var replies:[JSON] = []
  
     @IBOutlet weak var enshrine: UIButton!
     
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    //let httpReq = HttpDataSource()
     
+    let httpReq = HttpDataSource()
     
+    var webView: UIWebView!
     var tableView:UITableView!
     
     override func viewDidLoad() {
@@ -35,23 +32,55 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
         self.navigationItem.leftBarButtonItem = bItem
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
+        let svBounds = scrollView.bounds
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width, height: svBounds.height*2)
+        
         self.scrollView.indicatorStyle = UIScrollViewIndicatorStyle.White
         
-        initWebView()
-        initTableView()
         
-        /*
+        initTableView()
+        initWebView()
+        
         httpReq.delegate = self
-        httpReq.onHttpRequest("https://cnodejs.org/api/v1/topic/"+self.topicId!)
-        */
+        httpReq.onHttpRequest("https://cnodejs.org/api/v1/topic/"+(self.topic?["id"].string)!+"?mdrender=false")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func didRecieveResults(result:AnyObject) {
+        let json = JSON(result)
+        self.replies = json["data"]["replies"].arrayValue
+        
+        self.tableView.reloadData()
+    }
+    
+    func didRecieveFailed(error:NSError?) {
+        
+    }
+    
     //初始化WebView
     func initWebView(){
+        let svBounds = scrollView.bounds
+        self.webView = UIWebView(frame: CGRect(x: 0, y: 0, width: svBounds.width, height: svBounds.height))
+        
+        self.scrollView.addSubview(self.webView)
+        
+        /*
+        let equalTop = NSLayoutConstraint(item: self.webView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        let equalLeft = NSLayoutConstraint(item: self.webView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        
+        let equalRight = NSLayoutConstraint(item: self.webView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        self.webView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        equalTop.active = true
+        equalLeft.active = true
+        equalRight.active = true
+        */
+        
         let topicId = self.topic?["id"].string
         var topicContent = self.topic?["content"].string
         let topicTitle = self.topic?["title"].string
@@ -65,18 +94,25 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
     
     //初始化TableView
     func initTableView() -> Void {
-        let screenBounds = UIScreen.mainScreen().bounds
-        self.tableView = UITableView(frame: CGRect(x: 0, y: screenBounds.height, width: screenBounds.width, height: screenBounds.height), style: UITableViewStyle.Plain)
+        let svBounds = scrollView.bounds
+        self.tableView = UITableView(frame: CGRect(x: 0, y: svBounds.height, width: svBounds.width, height: svBounds.height), style: UITableViewStyle.Plain)
         self.tableView.dataSource = self
         
         self.scrollView.addSubview(self.tableView)
         
-        let equalWidth = NSLayoutConstraint(item: self.tableView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
+        /*
+        let equalTop = NSLayoutConstraint(item: self.tableView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.webView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         
-        let equalHeight = NSLayoutConstraint(item: self.tableView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
+        let equalLeft = NSLayoutConstraint(item: self.tableView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        
+        let equalRight = NSLayoutConstraint(item: self.tableView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.scrollView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
         self.tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        equalWidth.active = true
-        equalHeight.active = true
+        
+        equalTop.active = true
+        equalLeft.active = true
+        equalRight.active = true
+        */
     }
     
     func backHeader(){
@@ -84,11 +120,15 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return replies.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "comment-cell")
+        let replie = replies[indexPath.row]
+        println(replie["content"].string)
+        cell.textLabel?.text = replie["content"].string
+        return cell
     }
     
     /*

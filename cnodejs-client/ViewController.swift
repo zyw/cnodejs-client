@@ -20,14 +20,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let httpReq = HttpDataSource()
     
     var topic:JSON?
-//    var topicId:String?
-//    var topicTitle:String?
-//    var topicContent:String?
-    
-//    var topicLists:[JSON] = []
-//    var tag:String = "all"
-//    var page:Int = 1
-//    var isMore = false
     
     var indicatorView:MONActivityIndicatorView!
     
@@ -250,12 +242,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return indexPath
     }
-    
-    /*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "cellSegue"{
