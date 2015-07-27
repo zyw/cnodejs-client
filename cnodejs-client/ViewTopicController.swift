@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Alamofire
+import Alamofire
 
 class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSource, HttpProtocol {
     
@@ -36,7 +36,6 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
         self.scrollView.contentSize = CGSize(width: self.view.bounds.width, height: svBounds.height*2)
         
         self.scrollView.indicatorStyle = UIScrollViewIndicatorStyle.White
-        
         
         initTableView()
         initWebView()
@@ -98,6 +97,13 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
         self.tableView = UITableView(frame: CGRect(x: 0, y: svBounds.height, width: svBounds.width, height: svBounds.height), style: UITableViewStyle.Plain)
         self.tableView.dataSource = self
         
+        //打开tableview的高度估算功能
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 90.0;
+        
+        var nib = UINib(nibName: "Comment", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "comment-cell")
+        
         self.scrollView.addSubview(self.tableView)
         
         /*
@@ -124,9 +130,27 @@ class ViewTopicController: UIViewController,UIWebViewDelegate,UITableViewDataSou
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "comment-cell")
+//        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "comment-cell")
+//        let replie = replies[indexPath.row]
+//        cell.textLabel?.text = replie["content"].string
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("comment-cell", forIndexPath: indexPath) as! UITableViewCell
+        
+        let avatar = cell.viewWithTag(1) as! UIImageView
+        let author = cell.viewWithTag(2) as! UILabel
+        let comment = cell.viewWithTag(3) as! UILabel
+        
         let replie = replies[indexPath.row]
-        cell.textLabel?.text = replie["content"].string
+        
+        author.text = replie["author"]["loginname"].string
+        comment.text = replie["content"].string
+        
+        var imgUrl = "https://cnodejs.org"+replie["author"]["avatar_url"].string!
+        
+        Alamofire.request(Alamofire.Method.GET, imgUrl).response{(_,_,result,error) in
+            let img = UIImage(data: result as! NSData)
+            avatar.image = img
+        }
+        
         return cell
     }
     

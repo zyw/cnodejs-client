@@ -17,6 +17,7 @@
 		42060F301B1A1C4D00B11449 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 42060F261B1A1C2900B11449 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42060F7C1B1A230800B11449 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42060F7B1B1A230800B11449 /* SwiftyJSON.swift */; };
 		42060F7E1B1A2FBF00B11449 /* HttpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42060F7D1B1A2FBF00B11449 /* HttpDataSource.swift */; };
+		421D85EF1B6688DE00DEB025 /* CircularUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D85EE1B6688DE00DEB025 /* CircularUIImageView.swift */; };
 		424FA12B1B384C5A000908AD /* TopicsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424FA12A1B384C5A000908AD /* TopicsInfo.swift */; };
 		4263036E1B2DCA7100D1F0C2 /* RoundUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4263036D1B2DCA7100D1F0C2 /* RoundUIImageView.swift */; };
 		42A7CC7D1B1C35DD003015A4 /* KitTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7CC7C1B1C35DD003015A4 /* KitTool.swift */; };
@@ -100,6 +101,7 @@
 		42060F1E1B1A1C2900B11449 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../libs/Alamofire-1.2.2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		42060F7B1B1A230800B11449 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		42060F7D1B1A2FBF00B11449 /* HttpDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpDataSource.swift; sourceTree = "<group>"; };
+		421D85EE1B6688DE00DEB025 /* CircularUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularUIImageView.swift; sourceTree = "<group>"; };
 		424FA12A1B384C5A000908AD /* TopicsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsInfo.swift; sourceTree = "<group>"; };
 		4263036D1B2DCA7100D1F0C2 /* RoundUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIImageView.swift; sourceTree = "<group>"; };
 		42A7CC7C1B1C35DD003015A4 /* KitTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitTool.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				42060F7B1B1A230800B11449 /* SwiftyJSON.swift */,
 				42A7CC7C1B1C35DD003015A4 /* KitTool.swift */,
 				424FA12A1B384C5A000908AD /* TopicsInfo.swift */,
+				421D85EE1B6688DE00DEB025 /* CircularUIImageView.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				42FECD201B208ADF00468C25 /* ViewLeftMenuController.swift in Sources */,
 				424FA12B1B384C5A000908AD /* TopicsInfo.swift in Sources */,
 				42A7CC7D1B1C35DD003015A4 /* KitTool.swift in Sources */,
+				421D85EF1B6688DE00DEB025 /* CircularUIImageView.swift in Sources */,
 				42FAA77E1B1DDD13003E9934 /* ViewTopicController.swift in Sources */,
 				4263036E1B2DCA7100D1F0C2 /* RoundUIImageView.swift in Sources */,
 				42060F7C1B1A230800B11449 /* SwiftyJSON.swift in Sources */,
